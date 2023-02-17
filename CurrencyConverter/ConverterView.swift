@@ -9,8 +9,22 @@ import UIKit
 
 class ConverterView: UIViewController {
 
+    var usd : String = ""
+    var converter = ConverterLogic()
+    
+    @IBOutlet weak var usdAmount: UILabel!
+    @IBOutlet weak var yenAmount: UILabel!
+    @IBOutlet weak var poundAmount: UILabel!
+    @IBOutlet weak var euroAmount: UILabel!
+    @IBOutlet weak var cadAmount: UILabel!
+    
+    
+    
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        usdAmount.text = "Amount in USD: \(usd)"
+        yenAmount.text = converter.convertYen()
 
         // Do any additional setup after loading the view.
     }

@@ -20,7 +20,7 @@
                                 <rect key="frame" x="5" y="64" width="383" height="749"/>
                                 <subviews>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="CurrencyConverter" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="AZU-NX-Dd1">
-                                        <rect key="frame" x="119" y="0.0" width="145.33333333333337" height="20.333333333333332"/>
+                                        <rect key="frame" x="119.00000000000001" y="0.0" width="145.33333333333337" height="20.333333333333332"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                         <nil key="textColor"/>
                                         <nil key="highlightedColor"/>
@@ -43,6 +43,9 @@
                                                         <color key="textColor" white="0.50349650349999997" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                         <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                                         <textInputTraits key="textInputTraits"/>
+                                                        <connections>
+                                                            <action selector="getAmount:" destination="BYZ-38-t0r" eventType="editingDidEnd" id="KWa-XH-6fR"/>
+                                                        </connections>
                                                     </textField>
                                                 </subviews>
                                             </stackView>
@@ -59,6 +62,7 @@
                                                         <rect key="frame" x="196.66666666666666" y="0.0" width="51" height="31"/>
                                                         <connections>
                                                             <action selector="yen:" destination="BYZ-38-t0r" eventType="valueChanged" id="gd9-h7-AEh"/>
+                                                            <action selector="yenSwitch:" destination="BYZ-38-t0r" eventType="valueChanged" id="sG4-e0-YKx"/>
                                                         </connections>
                                                     </switch>
                                                 </subviews>
@@ -75,6 +79,7 @@
                                                     <switch opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" contentHorizontalAlignment="center" contentVerticalAlignment="center" on="YES" title="Pound" translatesAutoresizingMaskIntoConstraints="NO" id="4Vo-5D-pxf">
                                                         <rect key="frame" x="203.33333333333334" y="0.0" width="51" height="31"/>
                                                         <connections>
+                                                            <action selector="gbpSwitch:" destination="BYZ-38-t0r" eventType="valueChanged" id="HEe-mA-aZk"/>
                                                             <action selector="pound:" destination="BYZ-38-t0r" eventType="valueChanged" id="RGz-LQ-FFU"/>
                                                         </connections>
                                                     </switch>
@@ -92,6 +97,7 @@
                                                     <switch opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" contentHorizontalAlignment="center" contentVerticalAlignment="center" on="YES" title="Euro" translatesAutoresizingMaskIntoConstraints="NO" id="tZZ-7c-wcy">
                                                         <rect key="frame" x="205.66666666666666" y="0.0" width="51" height="31"/>
                                                         <connections>
+                                                            <action selector="eurSwitch:" destination="BYZ-38-t0r" eventType="valueChanged" id="dXJ-Jg-q91"/>
                                                             <action selector="euro:" destination="BYZ-38-t0r" eventType="valueChanged" id="qZf-EQ-ikw"/>
                                                         </connections>
                                                     </switch>
@@ -110,6 +116,7 @@
                                                         <rect key="frame" x="206.99999999999997" y="0.0" width="51" height="31"/>
                                                         <connections>
                                                             <action selector="cad:" destination="BYZ-38-t0r" eventType="valueChanged" id="uux-Ty-ltN"/>
+                                                            <action selector="cadSwitch:" destination="BYZ-38-t0r" eventType="valueChanged" id="Nsi-5z-f5Z"/>
                                                         </connections>
                                                     </switch>
                                                 </subviews>
@@ -141,6 +148,7 @@
                         <outlet property="euro" destination="tZZ-7c-wcy" id="d7m-p5-nbI"/>
                         <outlet property="pound" destination="4Vo-5D-pxf" id="ShR-j2-f4n"/>
                         <outlet property="usdAmount" destination="huL-AO-yod" id="PhX-ln-KrX"/>
+                        <outlet property="usdLabel" destination="4gm-MO-cAq" id="kVI-dX-j8r"/>
                         <outlet property="yen" destination="cMA-xA-Nzi" id="kGP-Sd-jFC"/>
                         <segue destination="n6d-Jh-BrU" kind="presentation" identifier="toConverter" id="rX1-mF-L5A"/>
                     </connections>
@@ -152,7 +160,7 @@
         <!--Converter View-->
         <scene sceneID="cj3-Ks-CPn">
             <objects>
-                <viewController id="n6d-Jh-BrU" customClass="ConverterView" customModule="CurrencyConverter" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="n6d-Jh-BrU" customClass="ConverterView" customModule="CurrencyConverter" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="KM2-AA-zY2" customClass="CurrencyAmountView">
                         <rect key="frame" x="0.0" y="0.0" width="393" height="783"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -249,6 +257,13 @@
                             <constraint firstItem="32T-Da-H2d" firstAttribute="top" secondItem="ylZ-ja-EPa" secondAttribute="top" constant="5" id="pmA-WK-Mz7"/>
                         </constraints>
                     </view>
+                    <connections>
+                        <outlet property="cadAmount" destination="dsH-is-dX9" id="LQh-vM-Yqy"/>
+                        <outlet property="euroAmount" destination="giI-e7-3aM" id="Eql-0d-ENH"/>
+                        <outlet property="poundAmount" destination="Fbg-tY-Chl" id="AFr-jG-5iD"/>
+                        <outlet property="usdAmount" destination="UQ2-by-KiP" id="Eg2-gW-RAc"/>
+                        <outlet property="yenAmount" destination="eQa-VO-Gah" id="COb-3n-lCc"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="sA5-1T-w0W" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>

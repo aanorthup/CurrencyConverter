@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		5C6D8AD4299FE5ED00587CCA /* ConverterView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5C6D8AD3299FE5ED00587CCA /* ConverterView.swift */; };
 		5CCDB635299DAEF6002A4870 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5CCDB634299DAEF6002A4870 /* AppDelegate.swift */; };
 		5CCDB637299DAEF6002A4870 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5CCDB636299DAEF6002A4870 /* SceneDelegate.swift */; };
 		5CCDB639299DAEF6002A4870 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5CCDB638299DAEF6002A4870 /* ViewController.swift */; };
@@ -14,10 +15,10 @@
 		5CCDB63E299DAEF7002A4870 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 5CCDB63D299DAEF7002A4870 /* Assets.xcassets */; };
 		5CCDB641299DAEF7002A4870 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 5CCDB63F299DAEF7002A4870 /* LaunchScreen.storyboard */; };
 		5CCDB649299DBC26002A4870 /* ConverterLogic.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5CCDB648299DBC26002A4870 /* ConverterLogic.swift */; };
-		5CCDB64B299DBFB4002A4870 /* ConverterView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5CCDB64A299DBFB4002A4870 /* ConverterView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		5C6D8AD3299FE5ED00587CCA /* ConverterView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ConverterView.swift; sourceTree = "<group>"; };
 		5CCDB631299DAEF6002A4870 /* CurrencyConverter.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = CurrencyConverter.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		5CCDB634299DAEF6002A4870 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		5CCDB636299DAEF6002A4870 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -27,7 +28,6 @@
 		5CCDB640299DAEF7002A4870 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		5CCDB642299DAEF7002A4870 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		5CCDB648299DBC26002A4870 /* ConverterLogic.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ConverterLogic.swift; sourceTree = "<group>"; };
-		5CCDB64A299DBFB4002A4870 /* ConverterView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ConverterView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -60,10 +60,10 @@
 		5CCDB633299DAEF6002A4870 /* CurrencyConverter */ = {
 			isa = PBXGroup;
 			children = (
+				5C6D8AD3299FE5ED00587CCA /* ConverterView.swift */,
 				5CCDB648299DBC26002A4870 /* ConverterLogic.swift */,
 				5CCDB634299DAEF6002A4870 /* AppDelegate.swift */,
 				5CCDB636299DAEF6002A4870 /* SceneDelegate.swift */,
-				5CCDB64A299DBFB4002A4870 /* ConverterView.swift */,
 				5CCDB638299DAEF6002A4870 /* ViewController.swift */,
 				5CCDB63A299DAEF6002A4870 /* Main.storyboard */,
 				5CCDB63D299DAEF7002A4870 /* Assets.xcassets */,
@@ -147,7 +147,7 @@
 				5CCDB639299DAEF6002A4870 /* ViewController.swift in Sources */,
 				5CCDB649299DBC26002A4870 /* ConverterLogic.swift in Sources */,
 				5CCDB635299DAEF6002A4870 /* AppDelegate.swift in Sources */,
-				5CCDB64B299DBFB4002A4870 /* ConverterView.swift in Sources */,
+				5C6D8AD4299FE5ED00587CCA /* ConverterView.swift in Sources */,
 				5CCDB637299DAEF6002A4870 /* SceneDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

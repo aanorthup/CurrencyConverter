@@ -11,49 +11,42 @@ class ViewController: UIViewController {
 
     @IBOutlet weak var usdAmount: UIStackView!
     
+    var converter = ConverterLogic()
+    
+    @IBOutlet weak var usdLabel: UITextField!
+    
+    var usd : String = ""
+
     
     
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view.
     }
-
     
-    @IBAction func yen(_ sender: UISwitch) {
-        if sender.isOn {
-            yen = true
-        } else {
-            yen = false
-        }
+    
+    @IBAction func yenSwitch(_ sender: UISwitch) {
+        converter.yenCheck(sender.isOn)
     }
     
-    @IBAction func pound(_ sender: UISwitch) {
-        if sender.isOn {
-            pound = true
-        } else {
-            pound = false
-        }
+    
+    @IBAction func gbpSwitch(_ sender: UISwitch) {
+        converter.poundCheck(sender.isOn)
     }
     
-    @IBAction func euro(_ sender: UISwitch) {
-        if sender.isOn {
-            euro = true
-        } else {
-            euro = false
-        }
+    
+    @IBAction func eurSwitch(_ sender: UISwitch) {
+        converter.euroCheck(sender.isOn)
     }
     
-    @IBAction func cad(_ sender: UISwitch) {
-        if sender.isOn {
-            cad = true
-        } else {
-            cad = false
-        }
+    
+    @IBAction func cadSwitch(_ sender: UISwitch) {
+        converter.cadCheck(sender.isOn)
     }
     
     @IBAction func convert(_ sender: UIButton) {
         //pull from converterlogic
-        
+        //usd = converter.convert()
         self.performSegue(withIdentifier: "toConverter", sender: self)
         
     }
@@ -63,7 +56,7 @@ class ViewController: UIViewController {
         // Pass the selected object to the new view controller.
         if segue.identifier == "toConverter" {
             let navigation = segue.destination as! ConverterView
-            //navigation.amount = amount
+            navigation.usd = usd
         }
         
     }
